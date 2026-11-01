@@ -1,5 +1,6 @@
-# Configuration de l'interface d'édition Pages CMS (https://app.pagescms.org)
-# Chaque entrée ci-dessous apparaît dans le menu de gauche de l'interface.
+# Interface d'édition du site (Pages CMS : https://app.pagescms.org)
+# Chaque entrée de « content » est une rubrique du menu de gauche.
+# Les champs anglais sont facultatifs : s'ils sont vides, le site affiche le texte français.
 
 media:
   input: images
@@ -8,111 +9,154 @@ media:
   rename: safe
 
 content:
+  # ───────────────────────── AGENDA ─────────────────────────
   - name: agenda
     label: "📅 Agenda"
     type: file
     path: content/agenda.json
     format: json
-    list: true
     fields:
-      - name: titre_fr
-        label: Titre (français)
-        type: string
-        required: true
-      - name: titre_en
-        label: Titre (anglais)
-        type: string
-      - name: date
-        label: Date
-        type: date
-        description: "Pour une date approximative, choisissez le 1er du mois et remplissez « Date affichée » ci-dessous. Les événements passés passent automatiquement dans « Souvenirs »."
-        options:
-          format: yyyy-MM-dd
-      - name: date_approx_fr
-        label: Date affichée (facultatif, français)
-        type: string
-        description: "Ex. « Mai 2027 » ou « 12 au 15 mai ». Laisser vide pour afficher la date exacte."
-      - name: date_approx_en
-        label: Date affichée (facultatif, anglais)
-        type: string
-      - name: lieu
-        label: Lieu
-        type: select
-        options:
-          values:
-            - name: saint-georges
-              label: Saint-Georges
-            - name: denmead
-              label: Denmead
-            - name: autre
-              label: Autre
-      - name: description_fr
-        label: Description (français)
-        type: text
-      - name: description_en
-        label: Description (anglais)
-        type: text
-      - name: photo
-        label: Photo (facultatif)
-        type: image
+      - name: evenements
+        label: Rendez-vous
+        description: "Cliquez sur un rendez-vous pour l'ouvrir. Bouton « Add an entry » en bas de la liste pour en ajouter un, icône corbeille pour le supprimer. Pensez à cliquer sur « Save » en haut à droite. Les rendez-vous passés sont rangés automatiquement dans « Rendez-vous passés » sur le site : inutile de les supprimer."
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titre_fr} — {date}"
+        fields:
+          - name: titre_fr
+            label: Titre
+            description: "Ex. : Assemblée générale, Soirée crêpes, Voyage à Denmead"
+            type: string
+            required: true
+            options:
+              maxlength: 80
+          - name: date
+            label: Date
+            description: "Date du rendez-vous. Si la date exacte n'est pas encore connue, choisissez le 1er du mois et remplissez « Date approximative » juste en dessous."
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: date_approx_fr
+            label: Date approximative (facultatif)
+            description: "Texte affiché à la place de la date exacte. Ex. : « Mai 2027 », « Du 12 au 15 mai ». Laissez vide pour afficher la date exacte."
+            type: string
+          - name: lieu
+            label: Lieu
+            type: select
+            default: saint-georges
+            options:
+              values:
+                - name: saint-georges
+                  label: Saint-Georges
+                - name: denmead
+                  label: Denmead
+                - name: autre
+                  label: Autre lieu
+          - name: description_fr
+            label: Description
+            description: "Quelques phrases : programme, heure, lieu précis, prix, comment s'inscrire…"
+            type: text
+          - name: photo
+            label: Photo (facultatif)
+            description: "Une image pour illustrer le rendez-vous (affiche, photo de l'an dernier…)."
+            type: image
+          - name: titre_en
+            label: "🇬🇧 Titre en anglais (facultatif)"
+            description: "Laissez vide si vous ne savez pas : le titre français sera affiché aux visiteurs anglais."
+            type: string
+          - name: date_approx_en
+            label: "🇬🇧 Date approximative en anglais (facultatif)"
+            description: "Ex. : « May 2027 »."
+            type: string
+          - name: description_en
+            label: "🇬🇧 Description en anglais (facultatif)"
+            type: text
 
+  # ───────────────────────── GALERIE ─────────────────────────
   - name: galerie
-    label: "📷 Galerie photos"
+    label: "📷 Photos"
     type: file
     path: content/galerie.json
     format: json
-    list: true
     fields:
-      - name: image
-        label: Photo
-        type: image
-        required: true
-      - name: legende_fr
-        label: Légende (français)
-        type: string
-      - name: legende_en
-        label: Légende (anglais)
-        type: string
-      - name: annee
-        label: Année
-        type: string
+      - name: photos
+        label: Photos de la galerie
+        description: "Ajoutez une photo avec « Add an entry », puis « Upload » pour l'envoyer depuis votre ordinateur ou téléphone. La galerie apparaît sur le site dès qu'il y a une photo. Préférez des photos de moins de 2 Mo. Pensez à cliquer sur « Save »."
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{legende_fr} {annee}"
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            required: true
+          - name: legende_fr
+            label: Légende
+            description: "Ex. : Accueil des familles de Denmead"
+            type: string
+            options:
+              maxlength: 100
+          - name: annee
+            label: Année (facultatif)
+            type: string
+            options:
+              maxlength: 4
+          - name: legende_en
+            label: "🇬🇧 Légende en anglais (facultatif)"
+            type: string
 
+  # ───────────────────────── ADHÉSION ─────────────────────────
   - name: adhesion
     label: "🤝 Adhésion et tarifs"
     type: file
     path: content/adhesion.json
     format: json
     fields:
-      - name: texte_fr
-        label: Texte d'introduction (français)
-        type: text
-      - name: texte_en
-        label: Texte d'introduction (anglais)
-        type: text
       - name: tarifs
-        label: Tarifs
+        label: Tarifs des cotisations
+        description: "Un tarif par ligne. Ex. : Adhésion famille — 20 €"
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{libelle_fr} : {prix}"
         fields:
           - name: libelle_fr
-            label: Libellé (français)
+            label: Nom du tarif
+            type: string
+            required: true
+          - name: prix
+            label: Prix
+            description: "Ex. : 15 €"
             type: string
           - name: libelle_en
-            label: Libellé (anglais)
+            label: "🇬🇧 Nom du tarif en anglais (facultatif)"
             type: string
-          - name: prix
-            label: Prix (ex. 15 €)
-            type: string
-      - name: lien_paiement
-        label: Lien d'adhésion en ligne (HelloAsso…, facultatif)
-        type: string
+      - name: texte_fr
+        label: Phrase d'introduction
+        description: "Affichée au-dessus des tarifs."
+        type: text
       - name: modalites_fr
-        label: Modalités de règlement (français)
+        label: Comment payer
+        description: "Ex. : chèque à l'ordre du comité, espèces lors des permanences…"
+        type: text
+      - name: lien_paiement
+        label: Lien d'adhésion en ligne (facultatif)
+        description: "Si le comité utilise HelloAsso ou un service similaire, collez ici l'adresse de la page d'adhésion (elle commence par https://). Un bouton « Adhérer en ligne » apparaîtra sur le site."
+        type: string
+      - name: texte_en
+        label: "🇬🇧 Phrase d'introduction en anglais (facultatif)"
         type: text
       - name: modalites_en
-        label: Modalités de règlement (anglais)
+        label: "🇬🇧 Comment payer, en anglais (facultatif)"
         type: text
 
+  # ───────────────────────── PRÉSENTATION & CONTACT ─────────────────────────
   - name: general
     label: "🏠 Présentation et contact"
     type: file
@@ -120,38 +164,32 @@ content:
     format: json
     fields:
       - name: accroche_fr
-        label: Phrase d'accueil (français)
-        type: text
-      - name: accroche_en
-        label: Phrase d'accueil (anglais)
+        label: Phrase d'accueil
+        description: "La phrase en haut de la page d'accueil, sous le nom des deux villages."
         type: text
       - name: presentation_fr
-        label: Présentation du comité (français)
-        type: text
-        description: "Laissez une ligne vide pour commencer un nouveau paragraphe."
-      - name: presentation_en
-        label: Présentation du comité (anglais)
+        label: Présentation du comité
+        description: "Laissez une ligne vide entre deux paragraphes."
         type: text
       - name: annee_jumelage
         label: Année de signature du jumelage
+        description: "Ex. : 1998. Laissez vide pour ne pas l'afficher."
         type: string
       - name: presidence
-        label: Président(e)
+        label: Président(e) du comité
+        description: "Prénom et nom. Laissez vide pour ne pas l'afficher."
         type: string
       - name: echanges_fr
-        label: Rythme des échanges (français)
-        type: string
-      - name: echanges_en
-        label: Rythme des échanges (anglais)
+        label: Rythme des échanges
+        description: "Ex. : Un voyage par an, en alternance"
         type: string
       - name: traversee_fr
-        label: Traversée (français)
-        type: string
-      - name: traversee_en
-        label: Traversée (anglais)
+        label: Moyen de traversée
+        description: "Ex. : Ferry Caen – Portsmouth"
         type: string
       - name: email
-        label: E-mail du comité
+        label: Adresse e-mail du comité
+        description: "Affichée sur le site. Les demandes d'adhésion y sont aussi envoyées."
         type: string
       - name: telephone
         label: Téléphone (facultatif)
@@ -159,13 +197,28 @@ content:
       - name: adresse
         label: Adresse postale
         type: text
-      - name: site_denmead
-        label: Site du comité de Denmead (facultatif)
-        type: string
       - name: facebook
         label: Page Facebook (facultatif)
+        description: "Adresse complète, commençant par https://"
+        type: string
+      - name: site_denmead
+        label: Site du comité de Denmead (facultatif)
+        description: "Adresse complète, commençant par https://"
+        type: string
+      - name: accroche_en
+        label: "🇬🇧 Phrase d'accueil en anglais (facultatif)"
+        type: text
+      - name: presentation_en
+        label: "🇬🇧 Présentation en anglais (facultatif)"
+        type: text
+      - name: echanges_en
+        label: "🇬🇧 Rythme des échanges en anglais (facultatif)"
+        type: string
+      - name: traversee_en
+        label: "🇬🇧 Moyen de traversée en anglais (facultatif)"
         type: string
 
+  # ───────────────────────── COMMUNES ─────────────────────────
   - name: communes
     label: "🗺️ Nos communes"
     type: file
@@ -177,46 +230,54 @@ content:
         type: object
         fields:
           - name: description_fr
-            label: Description (français)
-            type: text
-          - name: description_en
-            label: Description (anglais)
+            label: Description
             type: text
           - name: points
             label: Points clés
+            description: "Courtes phrases affichées sous forme de liste."
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fr}"
             fields:
               - name: fr
-                label: Français
+                label: Texte
                 type: string
               - name: en
-                label: Anglais
+                label: "🇬🇧 Texte en anglais (facultatif)"
                 type: string
           - name: photo
-            label: Photo
+            label: Photo (facultatif)
             type: image
+          - name: description_en
+            label: "🇬🇧 Description en anglais (facultatif)"
+            type: text
       - name: denmead
         label: Denmead
         type: object
         fields:
           - name: description_fr
-            label: Description (français)
-            type: text
-          - name: description_en
-            label: Description (anglais)
+            label: Description
             type: text
           - name: points
             label: Points clés
+            description: "Courtes phrases affichées sous forme de liste."
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{fr}"
             fields:
               - name: fr
-                label: Français
+                label: Texte
                 type: string
               - name: en
-                label: Anglais
+                label: "🇬🇧 Texte en anglais (facultatif)"
                 type: string
           - name: photo
-            label: Photo
+            label: Photo (facultatif)
             type: image
+          - name: description_en
+            label: "🇬🇧 Description en anglais (facultatif)"
+            type: text

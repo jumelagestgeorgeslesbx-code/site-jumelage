@@ -432,7 +432,10 @@ $("#join-form").addEventListener("submit", e => {
 });
 
 render();
-Promise.all(["general","agenda","adhesion","communes","galerie"].map(async k => { const v=await load(k); if (v!==null) C[k]=v; }))
+Promise.all(["general","agenda","adhesion","communes","galerie"].map(async k => { let v=await load(k);
+    if (k==="agenda" && v && !Array.isArray(v)) v=v.evenements||[];
+    if (k==="galerie" && v && !Array.isArray(v)) v=v.photos||[];
+    if (v!==null) C[k]=v; }))
   .then(render);
 </script>
 </body>
