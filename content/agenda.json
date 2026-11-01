@@ -1,0 +1,46 @@
+[
+  {
+    "titre_fr": "Assemblée générale",
+    "titre_en": "Annual general meeting",
+    "date": "2026-11-14",
+    "date_approx_fr": "",
+    "date_approx_en": "",
+    "lieu": "saint-georges",
+    "description_fr": "Bilan de l'année, élection du bureau et projets 2027. Verre de l'amitié à l'issue.",
+    "description_en": "Review of the year, committee election and plans for 2027. Drinks afterwards.",
+    "photo": ""
+  },
+  {
+    "titre_fr": "Stand au marché de Noël",
+    "titre_en": "Christmas market stall",
+    "date": "2026-12-05",
+    "date_approx_fr": "",
+    "date_approx_en": "",
+    "lieu": "saint-georges",
+    "description_fr": "Mince pies, shortbread et thé à l'anglaise au profit du comité.",
+    "description_en": "Mince pies, shortbread and English tea in aid of the committee.",
+    "photo": ""
+  },
+  {
+    "titre_fr": "Soirée conversation franco-anglaise",
+    "titre_en": "French–English conversation evening",
+    "date": "2027-03-01",
+    "date_approx_fr": "Mars 2027",
+    "date_approx_en": "March 2027",
+    "lieu": "saint-georges",
+    "description_fr": "Pour pratiquer l'anglais sans pression avant le voyage.",
+    "description_en": "Practise your English, no pressure, before the trip.",
+    "photo": ""
+  },
+  {
+    "titre_fr": "Voyage à Denmead",
+    "titre_en": "Trip to Denmead",
+    "date": "2027-05-01",
+    "date_approx_fr": "Mai 2027",
+    "date_approx_en": "May 2027",
+    "lieu": "denmead",
+    "description_fr": "Week-end prolongé, hébergement en familles, découverte du Hampshire.",
+    "description_en": "Long weekend, staying with host families, discovering Hampshire.",
+    "photo": ""
+  }
+]

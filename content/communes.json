@@ -1,0 +1,22 @@
+{
+  "saint_georges": {
+    "description_fr": "Commune de la Vienne, au nord de Poitiers, entre la vallée du Clain et le Futuroscope. Ses habitants sont les Saint-Georgeais.",
+    "description_en": "A village in the Vienne department, north of Poitiers, between the Clain valley and Futuroscope.",
+    "points": [
+      { "fr": "Département : Vienne (86)", "en": "Department: Vienne (86)" },
+      { "fr": "À quelques minutes de Poitiers", "en": "A few minutes from Poitiers" },
+      { "fr": "Voisine du parc du Futuroscope", "en": "Next to the Futuroscope park" }
+    ],
+    "photo": ""
+  },
+  "denmead": {
+    "description_fr": "Village du Hampshire, au nord de Portsmouth, en bordure du parc national des South Downs.",
+    "description_en": "A Hampshire village north of Portsmouth, on the edge of the South Downs National Park.",
+    "points": [
+      { "fr": "Comté : Hampshire", "en": "County: Hampshire" },
+      { "fr": "Près de Waterlooville et Portsmouth", "en": "Near Waterlooville and Portsmouth" },
+      { "fr": "Aux portes des South Downs", "en": "At the foot of the South Downs" }
+    ],
+    "photo": ""
+  }
+}

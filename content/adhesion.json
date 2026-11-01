@@ -1,0 +1,12 @@
+{
+  "texte_fr": "L'adhésion donne accès aux voyages, aux soirées et à l'accueil des familles de Denmead.",
+  "texte_en": "Membership gives access to trips, evenings and hosting families from Denmead.",
+  "tarifs": [
+    { "libelle_fr": "Adhésion individuelle", "libelle_en": "Individual membership", "prix": "" },
+    { "libelle_fr": "Adhésion famille", "libelle_en": "Family membership", "prix": "" },
+    { "libelle_fr": "Jeunes et étudiants", "libelle_en": "Young people and students", "prix": "" }
+  ],
+  "lien_paiement": "",
+  "modalites_fr": "Règlement par chèque à l'ordre du comité de jumelage, ou en espèces lors des permanences.",
+  "modalites_en": "Payment by cheque payable to the twinning committee, or in cash at our sessions."
+}
