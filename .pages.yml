@@ -13,10 +13,7 @@ content:
     type: file
     path: content/agenda.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{date} – {titre_fr}"
+    list: true
     fields:
       - name: titre_fr
         label: Titre (français)
@@ -64,10 +61,7 @@ content:
     type: file
     path: content/galerie.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{legende_fr}"
+    list: true
     fields:
       - name: image
         label: Photo
