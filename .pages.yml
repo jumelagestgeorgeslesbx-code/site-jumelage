@@ -1,0 +1,228 @@
+# Configuration de l'interface d'édition Pages CMS (https://app.pagescms.org)
+# Chaque entrée ci-dessous apparaît dans le menu de gauche de l'interface.
+
+media:
+  input: images
+  output: images
+  categories: [image]
+  rename: safe
+
+content:
+  - name: agenda
+    label: "📅 Agenda"
+    type: file
+    path: content/agenda.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{date} – {titre_fr}"
+    fields:
+      - name: titre_fr
+        label: Titre (français)
+        type: string
+        required: true
+      - name: titre_en
+        label: Titre (anglais)
+        type: string
+      - name: date
+        label: Date
+        type: date
+        description: "Pour une date approximative, choisissez le 1er du mois et remplissez « Date affichée » ci-dessous. Les événements passés passent automatiquement dans « Souvenirs »."
+        options:
+          format: yyyy-MM-dd
+      - name: date_approx_fr
+        label: Date affichée (facultatif, français)
+        type: string
+        description: "Ex. « Mai 2027 » ou « 12 au 15 mai ». Laisser vide pour afficher la date exacte."
+      - name: date_approx_en
+        label: Date affichée (facultatif, anglais)
+        type: string
+      - name: lieu
+        label: Lieu
+        type: select
+        options:
+          values:
+            - name: saint-georges
+              label: Saint-Georges
+            - name: denmead
+              label: Denmead
+            - name: autre
+              label: Autre
+      - name: description_fr
+        label: Description (français)
+        type: text
+      - name: description_en
+        label: Description (anglais)
+        type: text
+      - name: photo
+        label: Photo (facultatif)
+        type: image
+
+  - name: galerie
+    label: "📷 Galerie photos"
+    type: file
+    path: content/galerie.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{legende_fr}"
+    fields:
+      - name: image
+        label: Photo
+        type: image
+        required: true
+      - name: legende_fr
+        label: Légende (français)
+        type: string
+      - name: legende_en
+        label: Légende (anglais)
+        type: string
+      - name: annee
+        label: Année
+        type: string
+
+  - name: adhesion
+    label: "🤝 Adhésion et tarifs"
+    type: file
+    path: content/adhesion.json
+    format: json
+    fields:
+      - name: texte_fr
+        label: Texte d'introduction (français)
+        type: text
+      - name: texte_en
+        label: Texte d'introduction (anglais)
+        type: text
+      - name: tarifs
+        label: Tarifs
+        type: object
+        list: true
+        fields:
+          - name: libelle_fr
+            label: Libellé (français)
+            type: string
+          - name: libelle_en
+            label: Libellé (anglais)
+            type: string
+          - name: prix
+            label: Prix (ex. 15 €)
+            type: string
+      - name: lien_paiement
+        label: Lien d'adhésion en ligne (HelloAsso…, facultatif)
+        type: string
+      - name: modalites_fr
+        label: Modalités de règlement (français)
+        type: text
+      - name: modalites_en
+        label: Modalités de règlement (anglais)
+        type: text
+
+  - name: general
+    label: "🏠 Présentation et contact"
+    type: file
+    path: content/general.json
+    format: json
+    fields:
+      - name: accroche_fr
+        label: Phrase d'accueil (français)
+        type: text
+      - name: accroche_en
+        label: Phrase d'accueil (anglais)
+        type: text
+      - name: presentation_fr
+        label: Présentation du comité (français)
+        type: text
+        description: "Laissez une ligne vide pour commencer un nouveau paragraphe."
+      - name: presentation_en
+        label: Présentation du comité (anglais)
+        type: text
+      - name: annee_jumelage
+        label: Année de signature du jumelage
+        type: string
+      - name: presidence
+        label: Président(e)
+        type: string
+      - name: echanges_fr
+        label: Rythme des échanges (français)
+        type: string
+      - name: echanges_en
+        label: Rythme des échanges (anglais)
+        type: string
+      - name: traversee_fr
+        label: Traversée (français)
+        type: string
+      - name: traversee_en
+        label: Traversée (anglais)
+        type: string
+      - name: email
+        label: E-mail du comité
+        type: string
+      - name: telephone
+        label: Téléphone (facultatif)
+        type: string
+      - name: adresse
+        label: Adresse postale
+        type: text
+      - name: site_denmead
+        label: Site du comité de Denmead (facultatif)
+        type: string
+      - name: facebook
+        label: Page Facebook (facultatif)
+        type: string
+
+  - name: communes
+    label: "🗺️ Nos communes"
+    type: file
+    path: content/communes.json
+    format: json
+    fields:
+      - name: saint_georges
+        label: Saint-Georges-lès-Baillargeaux
+        type: object
+        fields:
+          - name: description_fr
+            label: Description (français)
+            type: text
+          - name: description_en
+            label: Description (anglais)
+            type: text
+          - name: points
+            label: Points clés
+            type: object
+            list: true
+            fields:
+              - name: fr
+                label: Français
+                type: string
+              - name: en
+                label: Anglais
+                type: string
+          - name: photo
+            label: Photo
+            type: image
+      - name: denmead
+        label: Denmead
+        type: object
+        fields:
+          - name: description_fr
+            label: Description (français)
+            type: text
+          - name: description_en
+            label: Description (anglais)
+            type: text
+          - name: points
+            label: Points clés
+            type: object
+            list: true
+            fields:
+              - name: fr
+                label: Français
+                type: string
+              - name: en
+                label: Anglais
+                type: string
+          - name: photo
+            label: Photo
+            type: image

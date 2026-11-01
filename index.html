@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Comité de jumelage Saint-Georges-lès-Baillargeaux – Denmead</title>
+<meta name="description" content="Comité de jumelage entre Saint-Georges-lès-Baillargeaux (Vienne, France) et Denmead (Hampshire, Angleterre) : agenda, voyages, adhésion et contact.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='11' cy='16' r='9' fill='%231f5f73'/%3E%3Ccircle cx='21' cy='16' r='9' fill='%233f6b3a' fill-opacity='.85'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Mise en page : deux rives d'une même Manche — Saint-Georges à gauche, Denmead à droite, une traversée en pointillés entre les deux. */
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --fg:#1f2a2e; --muted:#5b676b; --line:#dcd8cf;
+  --sea:#1f5f73; --sea-soft:#e3eef1; --poppy:#c2412d; --green:#3f6b3a; --green-soft:#e7efe4;
+  --display:"Young Serif", Georgia, "Times New Roman", serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#121a1d; --surface:#1a2428; --fg:#e8eceb; --muted:#9aa7aa; --line:#2c3a3f;
+  --sea:#6fb3c7; --sea-soft:#1b3138; --poppy:#e8735f; --green:#8cbf83; --green-soft:#1e2d1c; color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem)}
+h3{font-size:1.3rem}
+p{margin:0}
+a{color:var(--sea)}
+:focus-visible{outline:3px solid var(--poppy);outline-offset:2px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--poppy)}
+
+header{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;gap:16px;padding-block:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:1.15rem;flex:1;min-width:0;color:var(--fg);text-decoration:none}
+.brand small{display:block;font-family:var(--body);font-size:.78rem;color:var(--muted)}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--fg);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--sea)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{font:600 .8rem var(--body);background:none;border:0;padding:6px 12px;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--sea);color:var(--surface)}
+@media (max-width:720px){nav{order:3;width:100%;gap:14px;overflow-x:auto}}
+
+.hero{padding-block:56px 40px}
+.banks{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center}
+.bank h1{font-size:clamp(2rem,6vw,3.6rem);overflow-wrap:anywhere}
+.bank .where{margin-top:8px;color:var(--muted)}
+.bank.fr h1{color:var(--sea)}
+.bank.uk{text-align:right}
+.bank.uk h1{color:var(--green)}
+.crossing{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:.85rem}
+.crossing svg{width:120px;height:40px}
+.lede{max-width:62ch;margin-top:36px;font-size:1.15rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;font:600 1rem var(--body);padding:12px 22px;border-radius:6px;text-decoration:none;border:2px solid var(--sea);cursor:pointer;text-align:center}
+.btn.primary{background:var(--sea);color:var(--surface)}
+.btn.ghost{background:none;color:var(--sea)}
+@media (max-width:640px){
+  .banks{grid-template-columns:1fr}
+  .bank.uk{text-align:left}
+  .crossing{flex-direction:row;justify-content:flex-start}
+  .crossing svg{width:80px}
+}
+
+section{padding-block:56px;border-top:1px solid var(--line)}
+.head{display:grid;gap:8px;margin-bottom:28px;max-width:62ch}
+.head p{color:var(--muted)}
+
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+.about > *{min-width:0}
+.prose{display:grid;gap:14px;max-width:62ch}
+.facts{margin:0;border:1px solid var(--line);border-radius:8px;background:var(--surface);align-self:start}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 18px;border-top:1px solid var(--line)}
+.facts div:first-child{border-top:0}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0;font-weight:600;text-align:right}
+@media (max-width:760px){.about{grid-template-columns:1fr}}
+
+.towns{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.town{border-radius:8px;overflow:hidden;display:grid;align-content:start}
+.town .in{padding:24px;display:grid;gap:12px}
+.town img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.town.fr{background:var(--sea-soft)}
+.town.uk{background:var(--green-soft)}
+.town .tag{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.town.fr .tag{color:var(--sea)} .town.uk .tag{color:var(--green)}
+.town ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+@media (max-width:700px){.towns{grid-template-columns:1fr}}
+
+.events{display:grid;border-top:2px solid var(--fg)}
+.event{display:grid;grid-template-columns:120px 1fr auto;gap:20px;padding-block:18px;border-bottom:1px solid var(--line);align-items:start}
+.event > *{min-width:0}
+.date{font-family:var(--display);font-size:1.4rem;line-height:1.2;color:var(--poppy);font-variant-numeric:tabular-nums}
+.date small{display:block;font-family:var(--body);font-size:.8rem;color:var(--muted)}
+.event p{color:var(--muted);margin-top:4px}
+.event img{margin-top:12px;border-radius:6px;max-height:240px;object-fit:cover}
+.place{font-size:.8rem;font-weight:600;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.place.saint-georges,.place.autre{background:var(--sea-soft);color:var(--sea)}
+.place.denmead{background:var(--green-soft);color:var(--green)}
+.empty{padding-block:18px;color:var(--muted)}
+details.past{margin-top:20px}
+details.past summary{cursor:pointer;font-weight:600;color:var(--sea)}
+@media (max-width:600px){.event{grid-template-columns:1fr;gap:6px}.place{justify-self:start}}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.gallery figure{margin:0;display:grid;gap:6px}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+.gallery figcaption{font-size:.9rem;color:var(--muted)}
+
+.join{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.join > *{min-width:0}
+.prices{display:grid;gap:12px}
+.price{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.price b{font-family:var(--display);font-weight:400;font-size:1.5rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.note{margin-top:14px;font-size:.92rem;color:var(--muted)}
+form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:24px;align-self:start}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+input,select,textarea{font:1rem var(--body);padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);width:100%}
+.ok{padding:14px 16px;background:var(--green-soft);color:var(--fg);border-radius:6px}
+@media (max-width:760px){.join{grid-template-columns:1fr}}
+
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.contact > div{min-width:0}
+.contact .label{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.contact p{white-space:pre-line;overflow-wrap:anywhere}
+
+footer{padding-block:28px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+@media (prefers-reduced-motion:no-preference){.crossing .boat{animation:sail 6s ease-in-out infinite alternate}}
+@keyframes sail{from{transform:translateX(0)}to{transform:translateX(70px)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#">Comité de jumelage<small>Saint-Georges-lès-Baillargeaux · Denmead</small></a>
+    <nav>
+      <a href="#comite" data-t="nav_comite">Le comité</a>
+      <a href="#communes" data-t="nav_communes">Nos communes</a>
+      <a href="#agenda" data-t="nav_agenda">Agenda</a>
+      <a href="#galerie" data-t="nav_galerie" id="nav-galerie" hidden>Photos</a>
+      <a href="#adhesion" data-t="nav_adhesion">Adhérer</a>
+      <a href="#contact" data-t="nav_contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" id="lang-fr" aria-pressed="true">FR</button>
+      <button type="button" id="lang-en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div class="banks">
+    <div class="bank fr">
+      <h1>Saint-Georges-lès-Baillargeaux</h1>
+      <p class="where">Vienne · Nouvelle-Aquitaine · France</p>
+    </div>
+    <div class="crossing" aria-hidden="true">
+      <svg viewBox="0 0 120 40">
+        <path d="M4 26 Q30 14 60 22 T116 18" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 5"/>
+        <g class="boat"><path d="M18 22 h16 l-3 5 h-10 z" fill="currentColor"/><path d="M26 21 V9 l7 11 z" fill="currentColor"/></g>
+      </svg>
+      <span data-t="distance">≈ 480 km à vol d'oiseau</span>
+    </div>
+    <div class="bank uk">
+      <h1>Denmead</h1>
+      <p class="where">Hampshire · England</p>
+    </div>
+  </div>
+  <p class="lede" data-c="general.accroche"></p>
+  <div class="cta">
+    <a class="btn primary" href="#adhesion" data-t="cta_join">Rejoindre le comité</a>
+    <a class="btn ghost" href="#agenda" data-t="cta_agenda">Voir les prochains rendez-vous</a>
+  </div>
+</div>
+
+<section id="comite">
+  <div class="wrap about">
+    <div>
+      <div class="head">
+        <span class="eyebrow" data-t="nav_comite">Le comité</span>
+        <h2 data-t="h_comite">Une association ouverte à tous les habitants</h2>
+      </div>
+      <div class="prose" id="presentation"></div>
+    </div>
+    <dl class="facts" id="facts"></dl>
+  </div>
+</section>
+
+<section id="communes">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-t="nav_communes">Nos communes</span>
+      <h2 data-t="h_communes">Deux villages, deux rives</h2>
+    </div>
+    <div class="towns">
+      <article class="town fr" id="town-sg">
+        <img alt="Saint-Georges-lès-Baillargeaux" hidden>
+        <div class="in">
+          <span class="tag">France</span>
+          <h3>Saint-Georges-lès-Baillargeaux</h3>
+          <p class="desc"></p><ul></ul>
+        </div>
+      </article>
+      <article class="town uk" id="town-dm">
+        <img alt="Denmead" hidden>
+        <div class="in">
+          <span class="tag" data-t="england">Angleterre</span>
+          <h3>Denmead</h3>
+          <p class="desc"></p><ul></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="agenda">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-t="nav_agenda">Agenda</span>
+      <h2 data-t="h_agenda">Prochains rendez-vous</h2>
+    </div>
+    <div class="events" id="events"></div>
+    <details class="past" id="past-wrap" hidden>
+      <summary data-t="past">Rendez-vous passés</summary>
+      <div class="events" id="past-events" style="margin-top:12px"></div>
+    </details>
+  </div>
+</section>
+
+<section id="galerie" hidden>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-t="nav_galerie">Photos</span>
+      <h2 data-t="h_galerie">Souvenirs d'échanges</h2>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section id="adhesion">
+  <div class="wrap join">
+    <div>
+      <div class="head">
+        <span class="eyebrow" data-t="nav_adhesion">Adhérer</span>
+        <h2 data-t="h_adhesion">Devenir membre</h2>
+        <p data-c="adhesion.texte"></p>
+      </div>
+      <div class="prices" id="prices"></div>
+      <p class="note" data-c="adhesion.modalites"></p>
+      <p class="cta" id="pay-wrap" hidden><a class="btn primary" id="pay-link" target="_blank" rel="noopener" data-t="pay">Adhérer en ligne</a></p>
+    </div>
+    <form id="join-form" novalidate>
+      <label for="f-name"><span data-t="f_name">Nom et prénom</span><input id="f-name" required autocomplete="name"></label>
+      <label for="f-email"><span data-t="f_email">E-mail</span><input id="f-email" type="email" required autocomplete="email"></label>
+      <label for="f-type"><span data-t="f_type">Type d'adhésion</span><select id="f-type"></select></label>
+      <label for="f-host"><span data-t="f_host">Je peux accueillir une famille anglaise</span>
+        <select id="f-host"><option value="oui" data-t="yes">Oui</option><option value="non" data-t="no">Non</option><option value="peut-être" data-t="maybe">Peut-être</option></select></label>
+      <label for="f-msg"><span data-t="f_msg">Message (facultatif)</span><textarea id="f-msg" rows="3"></textarea></label>
+      <button class="btn primary" type="submit" data-t="send">Envoyer ma demande par e-mail</button>
+      <div id="join-ok" class="ok" hidden></div>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" data-t="nav_contact">Contact</span>
+      <h2 data-t="h_contact">Nous écrire</h2>
+    </div>
+    <div class="contact" id="contact-list"></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap" data-t="footer">Comité de jumelage Saint-Georges-lès-Baillargeaux – Denmead · Association loi 1901</div></footer>
+
+<noscript><p class="wrap">Ce site nécessite JavaScript. / This site needs JavaScript.</p></noscript>
+
+<script>
+// Textes fixes de l'interface. Le contenu modifiable est dans le dossier content/.
+const UI = {
+  fr: {nav_comite:"Le comité",nav_communes:"Nos communes",nav_agenda:"Agenda",nav_galerie:"Photos",nav_adhesion:"Adhérer",nav_contact:"Contact",
+    distance:"≈ 480 km à vol d'oiseau",cta_join:"Rejoindre le comité",cta_agenda:"Voir les prochains rendez-vous",
+    h_comite:"Une association ouverte à tous les habitants",h_communes:"Deux villages, deux rives",england:"Angleterre",
+    h_agenda:"Prochains rendez-vous",past:"Rendez-vous passés",no_event:"Aucun rendez-vous programmé pour l'instant. Revenez bientôt !",
+    h_galerie:"Souvenirs d'échanges",h_adhesion:"Devenir membre",pay:"Adhérer en ligne",
+    f_name:"Nom et prénom",f_email:"E-mail",f_type:"Type d'adhésion",f_host:"Je peux accueillir une famille anglaise",yes:"Oui",no:"Non",maybe:"Peut-être",
+    f_msg:"Message (facultatif)",send:"Envoyer ma demande par e-mail",h_contact:"Nous écrire",
+    footer:"Comité de jumelage Saint-Georges-lès-Baillargeaux – Denmead · Association loi 1901",
+    fact_year:"Jumelage signé en",fact_form:"Forme",fact_form_v:"Association loi 1901",fact_exch:"Échanges",fact_cross:"Traversée",fact_pres:"Présidence",
+    c_email:"E-mail",c_tel:"Téléphone",c_addr:"Adresse",c_dm:"Nos amis de Denmead",c_fb:"Facebook",c_fb_v:"Notre page Facebook",c_dm_v:"Site du comité de Denmead",
+    places:{"saint-georges":"Saint-Georges",denmead:"Denmead",autre:"Autre lieu"},
+    err:"Indiquez votre nom et une adresse e-mail valide.",
+    ok:(n,m)=>`Merci ${n} ! Votre logiciel de messagerie s'ouvre avec la demande pré-remplie. S'il ne s'ouvre pas, écrivez-nous à ${m}.`,
+    subject:"Demande d'adhésion au comité de jumelage"},
+  en: {nav_comite:"The committee",nav_communes:"Our villages",nav_agenda:"Events",nav_galerie:"Photos",nav_adhesion:"Join",nav_contact:"Contact",
+    distance:"≈ 480 km as the crow flies",cta_join:"Join the committee",cta_agenda:"See upcoming events",
+    h_comite:"An association open to every resident",h_communes:"Two villages, two shores",england:"England",
+    h_agenda:"Upcoming events",past:"Past events",no_event:"No events scheduled yet. Check back soon!",
+    h_galerie:"Memories of our exchanges",h_adhesion:"Become a member",pay:"Join online",
+    f_name:"Full name",f_email:"Email",f_type:"Membership type",f_host:"I can host an English family",yes:"Yes",no:"No",maybe:"Maybe",
+    f_msg:"Message (optional)",send:"Send my request by email",h_contact:"Get in touch",
+    footer:"Saint-Georges-lès-Baillargeaux – Denmead Twinning Committee · Non-profit association",
+    fact_year:"Twinning signed in",fact_form:"Status",fact_form_v:"Non-profit association",fact_exch:"Exchanges",fact_cross:"Crossing",fact_pres:"Chair",
+    c_email:"Email",c_tel:"Phone",c_addr:"Address",c_dm:"Our Denmead friends",c_fb:"Facebook",c_fb_v:"Our Facebook page",c_dm_v:"Denmead committee website",
+    places:{"saint-georges":"Saint-Georges",denmead:"Denmead",autre:"Elsewhere"},
+    err:"Please enter your name and a valid email address.",
+    ok:(n,m)=>`Thank you ${n}! Your email app is opening with the request filled in. If it doesn't, write to us at ${m}.`,
+    subject:"Twinning committee membership request"}
+};
+
+let lang = "fr";
+let C = {general:{},agenda:[],adhesion:{tarifs:[]},communes:{},galerie:[]};
+
+const $ = s => document.querySelector(s);
+const el = (tag, attrs={}, ...kids) => { const e=document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)) { if (k==="class") e.className=v; else if (k==="text") e.textContent=v; else e.setAttribute(k,v); }
+  kids.forEach(k => k && e.append(k)); return e; };
+// Texte bilingue : prend la version de la langue choisie, sinon l'autre.
+const tr = (obj, key) => { if (!obj) return ""; const a=obj[key+"_"+lang], b=obj[key+"_"+(lang==="fr"?"en":"fr")]; return (a&&String(a).trim())||b||""; };
+const img = p => p ? String(p).replace(/^\/+/, "") : "";
+const t = k => UI[lang][k];
+
+async function load(name){
+  try { const r = await fetch(`content/${name}.json?v=${Date.now()}`, {cache:"no-store"}); if (r.ok) return await r.json(); } catch(e) {}
+  return null;
+}
+
+function render(){
+  document.documentElement.lang = lang;
+  $("#lang-fr").setAttribute("aria-pressed", lang==="fr");
+  $("#lang-en").setAttribute("aria-pressed", lang==="en");
+  document.querySelectorAll("[data-t]").forEach(e => { const v=t(e.dataset.t); if (typeof v==="string") e.textContent=v; });
+  document.querySelectorAll("[data-c]").forEach(e => { const [f,k]=e.dataset.c.split("."); e.textContent=tr(C[f],k); e.hidden=!e.textContent; });
+
+  const G = C.general;
+  // Présentation
+  const pres = $("#presentation"); pres.replaceChildren();
+  tr(G,"presentation").split(/\n\s*\n/).filter(s=>s.trim()).forEach(p => pres.append(el("p",{text:p.trim()})));
+
+  // Fiche
+  const facts = $("#facts"); facts.replaceChildren();
+  [[t("fact_year"),G.annee_jumelage],[t("fact_form"),t("fact_form_v")],[t("fact_exch"),tr(G,"echanges")],[t("fact_cross"),tr(G,"traversee")],[t("fact_pres"),G.presidence]]
+    .filter(([,v])=>v && String(v).trim())
+    .forEach(([k,v]) => facts.append(el("div",{}, el("dt",{text:k}), el("dd",{text:v}))));
+
+  // Communes
+  [["#town-sg",C.communes.saint_georges],["#town-dm",C.communes.denmead]].forEach(([sel,d]) => {
+    const box=$(sel); d=d||{};
+    box.querySelector(".desc").textContent = tr(d,"description");
+    const ul=box.querySelector("ul"); ul.replaceChildren();
+    (d.points||[]).forEach(p => { const v=(p[lang]||p.fr||"").trim(); if (v) ul.append(el("li",{text:v})); });
+    const im=box.querySelector("img"); if (d.photo){ im.src=img(d.photo); im.hidden=false; } else im.hidden=true;
+  });
+
+  // Agenda
+  const today = new Date(); today.setHours(0,0,0,0);
+  const evs = (C.agenda||[]).filter(e=>e && (e.titre_fr||e.titre_en)).map(e=>({...e,_d:e.date?new Date(e.date+"T00:00:00"):null}));
+  const isPast = e => { if (!e._d) return false; const end=new Date(e._d);
+    if (e["date_approx_fr"]||e["date_approx_en"]) end.setMonth(end.getMonth()+1); else end.setDate(end.getDate()+1);
+    return end <= today; };
+  const upcoming = evs.filter(e=>!isPast(e)).sort((a,b)=>(a._d||0)-(b._d||0));
+  const past = evs.filter(isPast).sort((a,b)=>b._d-a._d);
+  const fmtDay = new Intl.DateTimeFormat(lang==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"short"});
+  const row = e => {
+    const approx = tr(e,"date_approx");
+    const dt = el("div",{class:"date"});
+    if (approx) dt.append(approx);
+    else if (e._d) { dt.append(fmtDay.format(e._d)); dt.append(el("small",{text:String(e._d.getFullYear())})); }
+    const body = el("div",{}, el("h3",{text:tr(e,"titre")}));
+    const desc = tr(e,"description"); if (desc) body.append(el("p",{text:desc}));
+    if (e.photo) body.append(el("img",{src:img(e.photo),alt:tr(e,"titre"),loading:"lazy"}));
+    const lieu = e.lieu||"saint-georges";
+    return el("div",{class:"event"}, dt, body, el("span",{class:"place "+lieu,text:t("places")[lieu]||lieu}));
+  };
+  const evBox=$("#events"); evBox.replaceChildren();
+  if (upcoming.length) upcoming.forEach(e=>evBox.append(row(e))); else evBox.append(el("p",{class:"empty",text:t("no_event")}));
+  const pastBox=$("#past-events"); pastBox.replaceChildren(); past.forEach(e=>pastBox.append(row(e)));
+  $("#past-wrap").hidden = !past.length;
+
+  // Galerie
+  const gal = (C.galerie||[]).filter(g=>g && g.image);
+  $("#galerie").hidden = $("#nav-galerie").hidden = !gal.length;
+  const gBox=$("#gallery"); gBox.replaceChildren();
+  gal.forEach(g => { const cap=[tr(g,"legende"),g.annee].filter(Boolean).join(" · ");
+    gBox.append(el("figure",{}, el("img",{src:img(g.image),alt:cap||"Photo",loading:"lazy"}), cap?el("figcaption",{text:cap}):null)); });
+
+  // Adhésion
+  const A = C.adhesion||{};
+  const pr=$("#prices"); pr.replaceChildren();
+  const sel=$("#f-type"); const prev=sel.selectedIndex; sel.replaceChildren();
+  (A.tarifs||[]).forEach(x => { const lab=tr(x,"libelle"); if(!lab) return;
+    pr.append(el("div",{class:"price"}, el("span",{text:lab}), el("b",{text:(x.prix&&String(x.prix).trim())||"—"})));
+    sel.append(el("option",{text:lab})); });
+  if (prev>=0 && prev<sel.options.length) sel.selectedIndex=prev;
+  sel.closest("label").hidden = !sel.options.length;
+  if (A.lien_paiement){ $("#pay-link").href=A.lien_paiement; $("#pay-wrap").hidden=false; } else $("#pay-wrap").hidden=true;
+
+  // Contact
+  const cl=$("#contact-list"); cl.replaceChildren();
+  const item=(label,node)=>cl.append(el("div",{}, el("div",{class:"label",text:label}), node));
+  if (G.email) item(t("c_email"), el("p",{}, el("a",{href:"mailto:"+G.email,text:G.email})));
+  if (G.telephone) item(t("c_tel"), el("p",{}, el("a",{href:"tel:"+G.telephone.replace(/\s/g,""),text:G.telephone})));
+  if (G.adresse) item(t("c_addr"), el("p",{text:G.adresse}));
+  if (G.site_denmead) item(t("c_dm"), el("p",{}, el("a",{href:G.site_denmead,target:"_blank",rel:"noopener",text:t("c_dm_v")})));
+  if (G.facebook) item(t("c_fb"), el("p",{}, el("a",{href:G.facebook,target:"_blank",rel:"noopener",text:t("c_fb_v")})));
+}
+
+function setLang(l){ lang=l; try{localStorage.setItem("lang",l)}catch(e){} render(); }
+$("#lang-fr").onclick=()=>setLang("fr");
+$("#lang-en").onclick=()=>setLang("en");
+try{ const s=localStorage.getItem("lang"); if (s==="en"||s==="fr") lang=s; else if ((navigator.language||"").startsWith("en")) lang="en"; }catch(e){}
+
+$("#join-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const n=$("#f-name").value.trim(), m=$("#f-email").value.trim(), ok=$("#join-ok"), to=C.general.email||"";
+  if (!n || !/^\S+@\S+\.\S+$/.test(m)) { ok.hidden=false; ok.textContent=t("err"); return; }
+  const body = [`${t("f_name")} : ${n}`, `${t("f_email")} : ${m}`,
+    `${t("f_type")} : ${$("#f-type").value||"-"}`, `${t("f_host")} : ${$("#f-host").selectedOptions[0].textContent}`,
+    "", $("#f-msg").value.trim()].join("\n");
+  ok.hidden=false; ok.textContent=t("ok")(n,to);
+  location.href = `mailto:${to}?subject=${encodeURIComponent(t("subject"))}&body=${encodeURIComponent(body)}`;
+});
+
+render();
+Promise.all(["general","agenda","adhesion","communes","galerie"].map(async k => { const v=await load(k); if (v!==null) C[k]=v; }))
+  .then(render);
+</script>
+</body>
+</html>
