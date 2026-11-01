@@ -63,15 +63,15 @@ content:
             description: "Une image pour illustrer le rendez-vous (affiche, photo de l'an dernier…)."
             type: image
           - name: titre_en
-            label: "🇬🇧 Titre en anglais (facultatif)"
+            label: "Titre en anglais (facultatif)"
             description: "Laissez vide si vous ne savez pas : le titre français sera affiché aux visiteurs anglais."
             type: string
           - name: date_approx_en
-            label: "🇬🇧 Date approximative en anglais (facultatif)"
+            label: "Date approximative en anglais (facultatif)"
             description: "Ex. : « May 2027 »."
             type: string
           - name: description_en
-            label: "🇬🇧 Description en anglais (facultatif)"
+            label: "Description en anglais (facultatif)"
             type: text
 
   # ───────────────────────── GALERIE ─────────────────────────
@@ -105,7 +105,7 @@ content:
             options:
               maxlength: 4
           - name: legende_en
-            label: "🇬🇧 Légende en anglais (facultatif)"
+            label: "Légende en anglais (facultatif)"
             type: string
 
   # ───────────────────────── ADHÉSION ─────────────────────────
@@ -132,7 +132,7 @@ content:
             description: "Ex. : 15 €"
             type: string
           - name: libelle_en
-            label: "🇬🇧 Nom du tarif en anglais (facultatif)"
+            label: "Nom du tarif en anglais (facultatif)"
             type: string
       - name: texte_fr
         label: Phrase d'introduction
@@ -147,10 +147,10 @@ content:
         description: "Si le comité utilise HelloAsso ou un service similaire, collez ici l'adresse de la page d'adhésion (elle commence par https://). Un bouton « Adhérer en ligne » apparaîtra sur le site."
         type: string
       - name: texte_en
-        label: "🇬🇧 Phrase d'introduction en anglais (facultatif)"
+        label: "Phrase d'introduction en anglais (facultatif)"
         type: text
       - name: modalites_en
-        label: "🇬🇧 Comment payer, en anglais (facultatif)"
+        label: "Comment payer, en anglais (facultatif)"
         type: text
 
   # ───────────────────────── PRÉSENTATION & CONTACT ─────────────────────────
@@ -203,16 +203,16 @@ content:
         description: "Adresse complète, commençant par https://"
         type: string
       - name: accroche_en
-        label: "🇬🇧 Phrase d'accueil en anglais (facultatif)"
+        label: "Phrase d'accueil en anglais (facultatif)"
         type: text
       - name: presentation_en
-        label: "🇬🇧 Présentation en anglais (facultatif)"
+        label: "Présentation en anglais (facultatif)"
         type: text
       - name: echanges_en
-        label: "🇬🇧 Rythme des échanges en anglais (facultatif)"
+        label: "Rythme des échanges en anglais (facultatif)"
         type: string
       - name: traversee_en
-        label: "🇬🇧 Moyen de traversée en anglais (facultatif)"
+        label: "Moyen de traversée en anglais (facultatif)"
         type: string
 
   # ───────────────────────── COMMUNES ─────────────────────────
@@ -241,13 +241,13 @@ content:
                 label: Texte
                 type: string
               - name: en
-                label: "🇬🇧 Texte en anglais (facultatif)"
+                label: "Texte en anglais (facultatif)"
                 type: string
           - name: photo
             label: Photo (facultatif)
             type: image
           - name: description_en
-            label: "🇬🇧 Description en anglais (facultatif)"
+            label: "Description en anglais (facultatif)"
             type: text
       - name: denmead
         label: Denmead
@@ -268,11 +268,11 @@ content:
                 label: Texte
                 type: string
               - name: en
-                label: "🇬🇧 Texte en anglais (facultatif)"
+                label: "Texte en anglais (facultatif)"
                 type: string
           - name: photo
             label: Photo (facultatif)
             type: image
           - name: description_en
-            label: "🇬🇧 Description en anglais (facultatif)"
+            label: "Description en anglais (facultatif)"
             type: text
